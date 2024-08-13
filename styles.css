@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,18 +12,17 @@ body {
     line-height: 1.6;
 }
 
-/* Container */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1440px; /* Updated max-width */
     margin: 0 auto;
-    padding: 15px; /* Reduced padding */
+    padding: 15px;
 }
 
 /* Header / Hero Section */
 header.hero {
     text-align: center;
-    padding: 70px 0; /* Reduced padding */
+    padding: 70px 15px; /* Added padding for mobile */
     background: linear-gradient(135deg, #6c63ff, #282828);
     color: #fff;
     position: relative;
@@ -34,23 +34,23 @@ header.hero .headshot {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #fff;
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 15px;
 }
 
 header.hero h1 {
-    font-size: 2.5rem; /* Reduced font size */
-    margin-bottom: 8px; /* Reduced margin */
+    font-size: 2.5rem;
+    margin-bottom: 8px;
 }
 
 header.hero p {
-    font-size: 1.2rem; /* Reduced font size */
+    font-size: 1.2rem;
     color: #b3b3b3;
 }
 
 /* Navigation Bar */
 nav {
     background-color: #1e1e1e;
-    padding: 15px 0; /* Reduced padding */
+    padding: 15px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -65,7 +65,12 @@ nav {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px; /* Reduced gap */
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.nav-list li {
+    flex: 1;
 }
 
 .nav-list li a {
@@ -101,19 +106,19 @@ nav {
 
 /* Section Styling */
 section {
-    padding: 30px 0; /* Reduced padding */
+    padding: 30px 15px; /* Added padding for mobile */
     background-color: #1e1e1e;
 }
 
 section h2 {
-    font-size: 2rem; /* Reduced font size */
+    font-size: 2rem;
     color: #6c63ff;
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 15px;
 }
 
 section p, section a {
     color: #b3b3b3;
-    font-size: 1.1rem; /* Reduced font size */
+    font-size: 1.1rem;
 }
 
 /* Button Styling */
@@ -135,37 +140,37 @@ section p, section a {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Reduced gap */
+    gap: 15px;
 }
 
 .card {
     background-color: #282828;
-    padding: 15px; /* Reduced padding */
-    border-radius: 8px; /* Reduced border radius */
+    padding: 15px;
+    border-radius: 8px;
     flex: 1;
-    min-width: 220px; /* Adjusted min-width */
+    min-width: 220px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px); /* Slightly reduced lift */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Slightly reduced shadow */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
-    font-size: 1.6rem; /* Reduced font size */
-    margin-bottom: 8px; /* Reduced margin */
+    font-size: 1.6rem;
+    margin-bottom: 8px;
     color: #fff;
 }
 
 .card p {
-    margin-bottom: 15px; /* Reduced margin */
+    margin-bottom: 15px;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 15px 0; /* Reduced padding */
+    padding: 15px 15px;
     background-color: #282828;
     border-top: 1px solid #333;
 }
@@ -175,7 +180,7 @@ footer p {
 }
 
 .social-icons a {
-    margin: 0 8px; /* Reduced margin */
+    margin: 0 8px;
     color: #6c63ff;
     font-size: 1.5rem;
     transition: color 0.3s;
@@ -196,5 +201,69 @@ footer p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header.hero h1 {
+        font-size: 2rem;
+    }
+
+    header.hero p {
+        font-size: 1rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-list li a {
+        font-size: 1rem;
+        padding-bottom: 10px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section p, section a {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        min-width: 100%; /* Cards take full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header.hero h1 {
+        font-size: 1.5rem;
+    }
+
+    header.hero p {
+        font-size: 0.9rem;
+    }
+
+    .nav-list li a {
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.25rem;
+    }
+
+    section p, section a {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
